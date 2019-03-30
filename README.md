@@ -1,4 +1,4 @@
 # MLPython
-Mafchine learning with python
+Machine learning with python
 
-this is the [MachineLeaningGithub](https://github.com/pbharrin/machinelearninginaction)
+Machine learning in Action book source code [MachineLeaningGithub](https://github.com/pbharrin/machinelearninginaction)
