@@ -34,7 +34,7 @@ def trainNB0(trainMatrix, trainCategory):
     numWords = len(trainMatrix[0])
     pAbusive = sum(trainCategory) / float(numTrainDocs)
     p0Num = ones(numWords)
-    p1Num = ones(numWords)  # change to ones()
+    p1Num = ones(numWords)  # change to ones() 防止零的影响
     p0Denom = 2.0
     p1Denom = 2.0  # change to 2.0
     for i in range(numTrainDocs):
@@ -44,13 +44,15 @@ def trainNB0(trainMatrix, trainCategory):
         else:
             p0Num += trainMatrix[i]
             p0Denom += sum(trainMatrix[i])
-    p1Vect = log(p1Num / p1Denom)  # change to log()
+    p1Vect = log(p1Num / p1Denom)  # change to log()防止很多很小的数相乘造成的下溢,此处采用ln(a*b)=ln(b)+ln(b) 乘法换成加法
     p0Vect = log(p0Num / p0Denom)  # change to log()
     return p0Vect, p1Vect, pAbusive
 
 
 def classifyNB(vec2Classify, p0Vec, p1Vec, pClass1):
     p1 = sum(vec2Classify * p1Vec) + log(pClass1)  # element-wise mult terminal
+    # 因为都是取过对数的,相加就等于原值的相乘 计算的结果没有实际意义但是因为函数的单调性相同,所以可以比较大小便可
+
     p0 = sum(vec2Classify * p0Vec) + log(1.0 - pClass1)
     if p1 > p0:
         return 1
@@ -93,16 +95,16 @@ def spamTest():
     classList = []
     fullText = []
     for i in range(1, 26):
-        wordList = textParse(open('email/spam/%d.txt' % i).read())
+        wordList = textParse(open('email/spam/%d.txt' % i,  encoding='gb18030', errors='ignore').read())
         docList.append(wordList)
         fullText.extend(wordList)
         classList.append(1)
-        wordList = textParse(open('email/ham/%d.txt' % i).read())
+        wordList = textParse(open('email/ham/%d.txt' % i,  encoding='gb18030', errors='ignore').read())
         docList.append(wordList)
         fullText.extend(wordList)
         classList.append(0)
     vocabList = createVocabList(docList)  # create vocabulary
-    trainingSet = range(50)
+    trainingSet = list(range(50))
     testSet = []  # create test set
     for i in range(10):
         randIndex = int(random.uniform(0, len(trainingSet)))
