@@ -14,7 +14,6 @@ void bubble_sort(int arr[], int len){
 	{
 		for (int i = 0; i < len; ++i)
 		{
-			
 			/* 内循环 做比较移动 */
 			if (arr[i+1]<arr[i])
 			{
