@@ -7,7 +7,14 @@ void swap(int *a,int *b){
 	*b=temp;
 }
 //直接插入排序,从前向后遍历数组,将每一个未排序的插入到已排序的相应位置;
-insertion_sort(){
+insertion_sort(int arr[], int len){
+	 int i,j,temp;
+    for (i=1;i<len;i++){
+            temp = arr[i];
+            for (j=i;j>0 && arr[j-1]>temp;j--)
+                    arr[j] = arr[j-1];
+            arr[j] = temp;
+    }
 
 }
 
