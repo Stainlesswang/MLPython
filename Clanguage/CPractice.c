@@ -2,17 +2,10 @@
  
 int main()
 {
-    int x,y,z,t;
-    printf("\n请输入三个数字:\n");
-    scanf("%d%d%d",&x,&y,&z);
-    if (x>y) { /*交换x,y的值*/
-        t=x;x=y;y=t;
-    }
-    if(x>z) { /*交换x,z的值*/
-        t=z;z=x;x=t;
-    }
-    if(y>z) { /*交换z,y的值*/
-        t=y;y=z;z=t;
-    }
-    printf("从小到大排序: %d %d %d\n",x,y,z);
+    // 基本数据类型在C语言中没什么特殊的兄弟
+    int a,b,c;
+    float profit;
+    printf("To c or not To that is aquestion!\n");
+ 
+ // #c语言当中的基本数据类型是什么   
 }
