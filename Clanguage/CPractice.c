@@ -7,10 +7,10 @@
 int main()
 {
     float i;
-
     i=72.99f;
 
     printf("%f\n",i++ );
+
     int num1,denom1,num2,denom2,result_num,result_denom;
 
     printf("Enter first feaction:");

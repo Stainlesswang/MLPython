@@ -36,7 +36,7 @@ int fbNumeber(int n){
 	}
 	return fbNumeber(n-1)+fbNumeber(n-2);
 }
-long fbNumeber2(long n){
+int fbNumeber2(int n){
 	if (n<0)
 	{
 		return -1;
@@ -50,10 +50,10 @@ long fbNumeber2(long n){
 		/* code */
 		return 1;
 	}
-	long all=0;
-	long n1=1;
-	long n2=0;
-	for (long i = 2; i <= n; ++i)
+	int all=0;
+	int n1=1;
+	int n2=0;
+	for (int i = 2; i <= n; ++i)
 	{
 		/* code */
 		all=n1+n2;
@@ -88,7 +88,7 @@ int main( )
 
    for (int i = 0; i < 20; i++)
    {
-		printf("%d\n",fbNumeber(i));
+		printf("%d\n",fbNumeber2(i));
    }
  
 
