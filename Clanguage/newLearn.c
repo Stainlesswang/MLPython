@@ -1,23 +1,32 @@
 #include <stdio.h>
+#include <ctype.h>
 
+#define N 3
+typedef float Dollars;
 int main(int argc, char const *argv[])
 {
-	/* code */
-	int a= 0;
-	printf("%6d,%4d\n",86,1040 );
-	int i,j;
-	float k;
-	// scanf("%d,%f,%d",&i,&k,&j);
-	// i=76.99f;
-	k=23;
-	// printf("%d\n",i );
-	// printf("%d\n",j );
-	if (0)
+	int a[N];
+	for (int i = 0; i < N; ++i)
 	{
-		printf("this is if statement%d\n", a);
-	}else{
-		printf("this is else statement%d\n",a );
+		scanf("%d",&a[i]);
 	}
-	printf("%f\n",k );
+	for (int i = 0; i < N; ++i)
+	{
+		printf(" the input is:%d\n",a[i] );
+	}
+
+	
+
+
+
+
+	long k;
+	int j=1000;
+	k=(long)j*j;
+	Dollars cash_in,cash_out;
+	cash_in=899.90;
+	cash_out=3999.87;
+	printf("%lu\n",sizeof(k) );
+	printf("%f\n",cash_in);
 	return 0;
 }
