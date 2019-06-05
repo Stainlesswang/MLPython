@@ -14,12 +14,10 @@ int main(int argc, char const *argv[])
 	{
 		printf(" the input is:%d\n",a[i] );
 	}
-
-	
-
-
-
-
+	int eight=0674;
+	int ten=0xa34;
+	printf("%d\n",eight );
+	printf("%d\n",ten );
 	long k;
 	int j=1000;
 	k=(long)j*j;
