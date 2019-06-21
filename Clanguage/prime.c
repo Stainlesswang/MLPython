@@ -31,6 +31,5 @@ int main(int argc, char const *argv[])
 	}else{
 		printf("Not Prime \n");
 	}
-	
 	return 0;
 }
